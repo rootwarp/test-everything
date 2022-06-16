@@ -1,0 +1,15 @@
+name: Create New Issue
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+
+jobs:
+  create:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: JasonEtco/create-an-issue@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: .github/NEWS_ISSUE_TEMPLATE.md
+          assignees: rootwarp

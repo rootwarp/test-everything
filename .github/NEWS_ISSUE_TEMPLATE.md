@@ -1,5 +1,5 @@
 ---
-title: News {{ date | data('YYYY-MM-DD') }}
+title: News {{ date | date('YYYY-MM-DD') }}
 ---
 
 News for procotols.

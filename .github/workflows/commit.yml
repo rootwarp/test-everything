@@ -1,0 +1,21 @@
+name: Dashboard Backup
+on:
+  schedule:
+    - cron: "*/60 * * * *"
+
+jobs:
+  run:
+    name: Create new commit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Backup
+        run: echo "hello world" >> test.txt
+
+      - name: Commit and push
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: "Commit action test"
+          commiter_name: Github Actions
